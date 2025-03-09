@@ -110,3 +110,68 @@ This project is a lightweight demonstration of applying a perceptron-based neura
 
 
 
+
+
+
+
+
+
+
+
+# k-means Clustering on Iris Dataset
+
+This project implements a k-means clustering algorithm on a modified version of the Iris dataset. It reads data from a tab-separated file (`iris_training.txt`), preprocesses it (including standardization), and then applies k-means clustering to partition the data into _k_ clusters as specified by the user. Finally, it displays cluster compositions, purity measures, and visualizes the clustering results with a scatter plot.
+
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [How It Works](#how-it-works)
+- [Dependencies](#dependencies)
+
+
+## Overview
+This Python script demonstrates how to:
+- **Load and preprocess data:** Read the Iris dataset from a file, handle different decimal separators, and standardize the features.
+- **Implement k-means clustering:** Randomly initialize centroids, iteratively assign points to the nearest centroid, and update centroid positions until convergence.
+- **Evaluate clustering quality:** Compute the composition of clusters and measure group purity.
+- **Visualize results:** Plot the clusters and centroids using Matplotlib.
+
+## Features
+- **Custom Data Loading:**  
+  Reads the Iris training data from a file with a custom tab separator and without headers.
+  
+- **Data Standardization:**  
+  Normalizes the features to have a mean of 0 and a standard deviation of 1.
+  
+- **k-means Clustering Algorithm:**  
+  - Random initialization of _k_ centroids.
+  - Iterative assignment of data points based on Euclidean distance.
+  - Recalculation of centroids until convergence or a maximum number of iterations is reached.
+  
+- **Cluster Evaluation:**  
+  Displays the number of examples in each cluster and calculates the purity of clusters based on the original labels.
+  
+- **Visualization:**  
+  Produces a scatter plot of the first two standardized features with clusters indicated by color and centroids marked in red.
+
+## How It Works
+1. **Data Loading & Preprocessing:**  
+   - The script reads the `iris_training.txt` file.
+   - It converts feature values from string to float, handling both commas and dots as decimal separators.
+   - The features are standardized to improve clustering performance.
+
+2. **Clustering with k-means:**  
+   - _k_ centroids are chosen randomly from the dataset.
+   - For each data point, the nearest centroid is determined using Euclidean distance.
+   - Centroids are updated by calculating the mean of all points assigned to each cluster.
+   - The process iterates until the centroids no longer change or the maximum iteration count is reached.
+
+3. **Evaluation & Visualization:**  
+   - Cluster compositions are printed along with a measure of purity (the fraction of original labels in each cluster).
+   - A scatter plot displays the clusters based on the first two features, with centroids highlighted.
+
+## Dependencies
+Pandas: For data manipulation and analysis.
+NumPy: For numerical computations and handling arrays.
+Matplotlib: For data visualization.
+
